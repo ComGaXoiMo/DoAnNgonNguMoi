@@ -1,11 +1,12 @@
 import React from 'react'
-
+import OwlCarousel from 'react-owl-carousel'
+import 'owl.carousel/dist/assets/owl.carousel.css'
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 const Filmitem = ({ item }) => {
     console.log(item)
-    return (
-        <>
-            <div>{item.nameMovie}</div>
-            <a href="#" class="movie-item">
+    return (    
+        <OwlCarousel className="owl-theme" loop nav margin={3} >
+        <a href="#" class="movie-item">
                 <img src={item.poster} alt="" />
                 <div class="movie-item-content">
                     <div class="movie-item-title">
@@ -29,7 +30,9 @@ const Filmitem = ({ item }) => {
                     </div>
                 </div>
             </a>
-        </>
+    </OwlCarousel>   
+            
+        
 
 
     )
