@@ -7,7 +7,7 @@ import 'owl.carousel/dist/assets/owl.carousel.css'
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import Film from './filminfo/Film';
 const Body =() => {
-   const [item, setItem]=useState([]);
+   const [items, setItems]=useState([]);
    const [isLoading, setIsLoading] = useState(true);
    useEffect(()=>{
     const fetchItems=async ()=>{
@@ -17,7 +17,7 @@ const Body =() => {
        
         const result = await axios.get("http://localhost:5000/api/film/listnewfilm");
         console.log(result.data)
-        setItem(result.data)
+        setItems(result.data)
         setIsLoading(false)
     }
     fetchItems()
@@ -26,7 +26,11 @@ const Body =() => {
             
             <>
                 
-                <Film isLoading={isLoading} item={item}/>
+                <OwlCarousel className="owl-theme" loop nav margin={3} >
+                
+                <Film isLoading={isLoading} items={items}/>
+
+                </OwlCarousel>
                 <div class="section">
                     <div class="container">
                         <div class="section-header">
