@@ -25,10 +25,6 @@ const Body = () => {
     return (
 
         <>
-        
-                    <OwlCarousel className="owl-theme" loop nav margin={3} >
-                        <Film isLoading={isLoading} items={items} />
-                    </OwlCarousel>
 
             <div class="section">
                 <div class="container">
