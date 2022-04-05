@@ -1,0 +1,26 @@
+import React, { Component } from 'react';
+
+ import './assets/app.js'
+ import './assets/app.css'
+ import './assets/grid.css';
+
+import Header from './components/Header';
+import Body from './components/Body';
+import Footer from './components/Footer';
+import Home from './components/Home.js';
+import Login from './components/Login';
+
+import Main from './components/Main';
+class App extends Component {
+  
+  render() {
+    return (
+      <div>
+      <Main/>
+        
+      </div>
+    );
+  }
+}
+
+export default App;
