@@ -5,6 +5,7 @@ const Filmitem = ({ item }) => {
     return (    
            
             <>
+            <a href="#" class="movie-item">
                 <img src={item.poster} alt="" />
                 <div class="movie-item-content">
                     <div class="movie-item-title">
@@ -13,7 +14,7 @@ const Filmitem = ({ item }) => {
                     <div class="movie-infos">
                         <div class="movie-info">
                             <i class="bx bxs-star"></i>
-                            <span>{item.rate}</span>
+                            <span>{item.category}</span>
                         </div>
                         <div class="movie-info">
                             <i class="bx bxs-time"></i>
@@ -27,6 +28,7 @@ const Filmitem = ({ item }) => {
                         </div>
                     </div>
                 </div>
+         </a>
             
         
                             </>

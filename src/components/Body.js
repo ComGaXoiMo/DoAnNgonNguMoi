@@ -9,6 +9,8 @@ import Film from './filminfo/Film';
 const Body = () => {
     const [items, setItems] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [items2, setItems2] = useState([]);
+    const [isLoading2, setIsLoading2] = useState(true);
     useEffect(() => {
         const fetchItems = async () => {
             // fix lỗi CRORS
@@ -16,16 +18,18 @@ const Body = () => {
             //http://localhost:5000/api/film/listallfilm
 
             const result = await axios.get("http://localhost:5000/api/film/listnewfilm");
-            console.log(result.data)
+            const result2 = await axios.get("http://localhost:5000/api/film/listallfilm");
+            console.log(result2.data)
             setItems(result.data)
+            setItems2(result2.data)
             setIsLoading(false)
+            setIsLoading2(false)
         }
         fetchItems()
     }, [])
     return (
 
         <>
-
             <div class="section">
                 <div class="container">
                     <div class="section-header">
@@ -43,194 +47,11 @@ const Body = () => {
                     <div class="section-header">
                         All Film
                     </div>
-                    <OwlCarousel className="owl-theme" loop nav margin={3} >
-
-
-                        <a href="#" class="movie-item">
-                            <img src="../assets/images/cartoons/demon-slayer.jpg" alt="" />
-                            <div class="movie-item-content">
-                                <div class="movie-item-title">
-                                    Demon Slayer
-                                </div>
-                                <div class="movie-infos">
-                                    <div class="movie-info">
-                                        <i class="bx bxs-star"></i>
-                                        <span>9.5</span>
-                                    </div>
-                                    <div class="movie-info">
-                                        <i class="bx bxs-time"></i>
-                                        <span>120 mins</span>
-                                    </div>
-                                    <div class="movie-info">
-                                        <span>HD</span>
-                                    </div>
-                                    <div class="movie-info">
-                                        <span>16+</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="#" class="movie-item">
-                            <img src="../assets/images/cartoons/croods.jpg" alt="" />
-                            <div class="movie-item-content">
-                                <div class="movie-item-title">
-                                    Croods
-                                </div>
-                                <div class="movie-infos">
-                                    <div class="movie-info">
-                                        <i class="bx bxs-star"></i>
-                                        <span>9.5</span>
-                                    </div>
-                                    <div class="movie-info">
-                                        <i class="bx bxs-time"></i>
-                                        <span>120 mins</span>
-                                    </div>
-                                    <div class="movie-info">
-                                        <span>HD</span>
-                                    </div>
-                                    <div class="movie-info">
-                                        <span>16+</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="#" class="movie-item">
-                            <img src="../assets/images/cartoons/dragon.jpg" alt="" />
-                            <div class="movie-item-content">
-                                <div class="movie-item-title">
-                                    Dragonball
-                                </div>
-                                <div class="movie-infos">
-                                    <div class="movie-info">
-                                        <i class="bx bxs-star"></i>
-                                        <span>9.5</span>
-                                    </div>
-                                    <div class="movie-info">
-                                        <i class="bx bxs-time"></i>
-                                        <span>120 mins</span>
-                                    </div>
-                                    <div class="movie-info">
-                                        <span>HD</span>
-                                    </div>
-                                    <div class="movie-info">
-                                        <span>16+</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="#" class="movie-item">
-                            <img src="../assets/images/cartoons/over-the-moon.jpg" alt="" />
-                            <div class="movie-item-content">
-                                <div class="movie-item-title">
-                                    Over The Moon
-                                </div>
-                                <div class="movie-infos">
-                                    <div class="movie-info">
-                                        <i class="bx bxs-star"></i>
-                                        <span>9.5</span>
-                                    </div>
-                                    <div class="movie-info">
-                                        <i class="bx bxs-time"></i>
-                                        <span>120 mins</span>
-                                    </div>
-                                    <div class="movie-info">
-                                        <span>HD</span>
-                                    </div>
-                                    <div class="movie-info">
-                                        <span>16+</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="#" class="movie-item">
-                            <img src="../assets/images/cartoons/weathering.jpg" alt="" />
-                            <div class="movie-item-content">
-                                <div class="movie-item-title">
-                                    Weathering With You
-                                </div>
-                                <div class="movie-infos">
-                                    <div class="movie-info">
-                                        <i class="bx bxs-star"></i>
-                                        <span>9.5</span>
-                                    </div>
-                                    <div class="movie-info">
-                                        <i class="bx bxs-time"></i>
-                                        <span>120 mins</span>
-                                    </div>
-                                    <div class="movie-info">
-                                        <span>HD</span>
-                                    </div>
-                                    <div class="movie-info">
-                                        <span>16+</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="#" class="movie-item">
-                            <img src="../assets/images/cartoons/your-name.jpg" alt="" />
-                            <div class="movie-item-content">
-                                <div class="movie-item-title">
-                                    Your Name
-                                </div>
-                                <div class="movie-infos">
-                                    <div class="movie-info">
-                                        <i class="bx bxs-star"></i>
-                                        <span>9.5</span>
-                                    </div>
-                                    <div class="movie-info">
-                                        <i class="bx bxs-time"></i>
-                                        <span>120 mins</span>
-                                    </div>
-                                    <div class="movie-info">
-                                        <span>HD</span>
-                                    </div>
-                                    <div class="movie-info">
-                                        <span>16+</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="#" class="movie-item">
-                            <img src="../assets/images/cartoons/coco.jpg" alt="" />
-                            <div class="movie-item-content">
-                                <div class="movie-item-title">
-                                    Coco
-                                </div>
-                                <div class="movie-infos">
-                                    <div class="movie-info">
-                                        <i class="bx bxs-star"></i>
-                                        <span>9.5</span>
-                                    </div>
-                                    <div class="movie-info">
-                                        <i class="bx bxs-time"></i>
-                                        <span>120 mins</span>
-                                    </div>
-                                    <div class="movie-info">
-                                        <span>HD</span>
-                                    </div>
-                                    <div class="movie-info">
-                                        <span>16+</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </OwlCarousel>
-
-
-
-
+                    <Film isLoading={isLoading2} items={items2} />
+                    
                 </div>
             </div>
-            <OwlCarousel className="owl-theme" loop nav margin={3} >
-
-
-            </OwlCarousel>
+            
 
 
             <div class="section">

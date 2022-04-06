@@ -10,9 +10,8 @@ const Film = ({items, isLoading}) => {
       <OwlCarousel className="owl-theme" loop nav margin={3} >
       {items.map((item) =>(
         
-         <a href="#" class="movie-item">
            <Filmitem key={item._id} item = {item}></Filmitem>
-         </a>
+         
       )
       )}
       </OwlCarousel>                 
