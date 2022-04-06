@@ -9,7 +9,7 @@ function Login() {
     return (
 
         <><Header />
-            <div class="wrapper">
+            <div class="wrapperlg">
                 <h2>Đăng Nhập</h2>
                 <form>
                     <div class="form-group">

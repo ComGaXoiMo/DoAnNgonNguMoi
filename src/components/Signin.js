@@ -8,7 +8,7 @@ export default function Signin() {
     return (
         <><Header />
 
-            <div class="wrapper" >
+            <div class="wrapperlg" >
                 <h2>Đăng Ký</h2>
                 <form>
                     <div class="form-group">

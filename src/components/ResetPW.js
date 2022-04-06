@@ -7,7 +7,7 @@ import Login from './Login';
 export default function ResetPW() {
     return (
         <><Header />
-            <div class="wrapper">
+            <div class="wrapperlg">
                 <h2>Lấy lại mật khẩu</h2>
 
                 <form >

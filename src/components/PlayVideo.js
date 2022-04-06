@@ -12,7 +12,7 @@ function PlayVideo() {
 
     return (
         <><Header />
-            <div class="wrapper">
+            <div class="wrapperlg">
                 video
             </div>
 
