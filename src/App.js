@@ -11,6 +11,7 @@ import Home from './components/Home.js';
 import Login from './components/Login';
 
 import Main from './components/Main';
+import PlayVideo from './components/PlayVideo.js';
 class App extends Component {
   
   render() {

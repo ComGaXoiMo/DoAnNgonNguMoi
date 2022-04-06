@@ -5,7 +5,7 @@ const Filmitem = ({ item }) => {
     return (    
            
             <>
-            <a href="#" class="movie-item">
+            <a href="/Playvideo" class="movie-item">
                 <img src={item.poster} alt="" />
                 <div class="movie-item-content">
                     <div class="movie-item-title">
