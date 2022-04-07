@@ -2,11 +2,10 @@ import React from 'react'
 
 const Filmitem = ({ item }) => {
     console.log(item)
-    return (    
-           
+    return (           
             <>
             <a href="/Playvideo" class="movie-item">
-                <img src={item.poster} alt="" />
+                <img src={"http://localhost:5001/picture?pic="+item.poster} alt="" />
                 <div class="movie-item-content">
                     <div class="movie-item-title">
                         {item.nameMovie}
@@ -28,13 +27,8 @@ const Filmitem = ({ item }) => {
                         </div>
                     </div>
                 </div>
-         </a>
-            
-        
-                            </>
-
-
+         </a>       
+         </>
     )
 }
-
 export default Filmitem
