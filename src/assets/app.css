@@ -472,7 +472,7 @@ a.movie-item:hover {
 }
 
 footer.section {
-    margin-top: 80px;
+    margin-top: 0px;
     padding-bottom: 80px;
     position: relative;
     background-color: var(--box-bg);
