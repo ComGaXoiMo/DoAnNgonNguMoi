@@ -11,6 +11,7 @@ const Body = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [items2, setItems2] = useState([]);
     const [isLoading2, setIsLoading2] = useState(true);
+    
     useEffect(() => {
         const fetchItems = async () => {
             // fix lỗi CRORS

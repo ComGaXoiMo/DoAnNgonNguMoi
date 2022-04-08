@@ -1,10 +1,11 @@
 import React from 'react'
-
+const idsave= "";
 const Filmitem = ({ item }) => {
-    console.log(item)
+  
     return (           
             <>
-            <a href="/Playvideo" class="movie-item">
+            
+            <a href={"/Playvideo/"+item._id} class="movie-item">
                 <img src={"http://localhost:5001/picture?pic="+item.poster} alt="" />
                 <div class="movie-item-content">
                     <div class="movie-item-title">
@@ -31,4 +32,5 @@ const Filmitem = ({ item }) => {
          </>
     )
 }
-export default Filmitem
+export default Filmitem     
+ 

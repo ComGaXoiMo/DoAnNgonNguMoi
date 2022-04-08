@@ -15,7 +15,7 @@ export default function Main() {
                 <Route path="/login" element={<Login />} />
                 <Route path='/Signin' element={<Signin />} />
                 <Route path='/ResetPW' element={<ResetPW />} />
-                <Route path='/Playvideo' element={<PlayVideo />} />
+                <Route path='/Playvideo/:id' element={<PlayVideo />} />
             </Routes>
 
 
