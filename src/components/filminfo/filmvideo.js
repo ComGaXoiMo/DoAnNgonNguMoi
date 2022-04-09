@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
- import '../../assets/app.css';
- import '../../css/style.css';
+import '../../assets/app.css';
+import '../../css/style.css';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import Filmitem from './Filmitem';
@@ -12,25 +12,25 @@ import VideoPlayer from 'react-video-js-player';
 
 const Filmvideo = ({ items }) => {
   const { id } = useParams();
-  console.log(items)
+
+  //console.log(items)
   return (
     <section>
 
       {
         items.map((item) => {
           if (item._id == id) {
-            return(
+            return (
               <>
-              <video id="videoPlayer" width="650" height="450" controls muted="muted" autoplay>
+                <video id="videoPlayer" width="650" height="450" controls muted="muted" autoplay>
 
-              <source src={"http://localhost:5001/video1?v=" + item.videoLink} type="video/mp4" />
-            </video>
-            <label class="section-header">{item.nameMovie} </label>
-            
+                  <source src={"http://localhost:5001/video1?v=" + item.videoLink} type="video/mp4" />
+                </video>
+                <label class="tieude">{item.nameMovie} </label>
+
               </>
-            
+
             )
-            //  <VideoPlayer key={item._id} src={"http://localhost:5001/video1?v=film1"}  poster={item.poster} width="700" height="450" ></VideoPlayer>
           }
         }
         )}
