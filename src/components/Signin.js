@@ -1,10 +1,25 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import Header from './Header';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import '../assets/app.css'
+import axios from 'axios';
 import Login from './Login';
-export default function Signin() {
+const Signin = () => {
+    const [user, setUser] = useState([]);
+    const body = {
+        email:"123@gmail.com",
+        name:"1",
+        password: "123"
+};
+    useEffect(() => {
+        const fetchItem = async () => {
+            const result = await axios.post(`http://localhost:5000/api/user/userSignUp`, body);
+            setUser(result)
+            alert(result.body)
+        }
+        //fetchItem();
+    }, [])
     return (
         <><Header />
 
@@ -24,13 +39,14 @@ export default function Signin() {
                         <input type="password" name="password" class="form-control " placeholder="Nhập mật khẩu" />
 
                     </div>
-                    <div class="form-group">
+                    {/* <div class="form-group">
                         <label>Nhập Lại Mật Khẩu</label>
                         <input type="password" name="confirm_password" class="form-control" placeholder="Nhập mật khẩu vừa nhập" />
 
-                    </div>
+                    </div> */}
                     <div class="">
-                        <input type="submit" class="btndk" value="Đăng Ký" />
+                        {/* <input type="submit" class="btndk" value="Đăng Ký" /> */}
+                        <button onClick={useEffect.fetchItem} type="button" name="button" >Đăng ký</button>
                     </div>
                     <p>Bạn đã có tài khoản ? <Link to="/Login" class="link">Đăng nhập </Link></p>
                 </form>
@@ -38,3 +54,4 @@ export default function Signin() {
             <Footer /></>
     );
 };
+export default Signin;
