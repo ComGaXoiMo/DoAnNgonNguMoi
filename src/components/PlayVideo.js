@@ -1,37 +1,47 @@
 import React, { Component, useState, useEffect } from 'react';
 import Header from './Header';
-import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import '../css/site.css';
 import '../css/style.css';
+import { useParams } from 'react-router-dom';
 import 'owl.carousel/dist/assets/owl.carousel.css';
-import { useParams } from "react-router-dom";
-
 import axios from 'axios';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import Filmvideo from './filminfo/Filmvideo';
-import VideoPlayer from 'react-video-js-player';
+import Coment from '../components/filminfo/Coment'
 import link from "../assets/images/film1.mp4"
 const PlayVideo = () => {
-
+     
+    const  idFF  = useParams();
     const [items, setItems] = useState([]);
-    const videosrc = link;
-    const poster = "../assets/images/movies/call.jpg";
+    const [coment, setcomentComent] = useState([]);
+    
+    const body = {
+        
+            idF:idFF.id
+           
+    };
+    
+    console.log(idFF.id)
     useEffect(() => {
         const fetchItems = async () => {
             const result = await axios.get(`http://localhost:5000/api/film/listallfilm`);
-
+            
+            const resulComent = await axios.post(`http://localhost:5000/api/comment/loadComment`,body);
             setItems(result.data)
+            setcomentComent(resulComent.data)
+            
         }
         fetchItems()
+        console.log(coment)
     }, [])
     return (
         <><Header />
         <div class="row">
             <div class="col ">
-                <hr></hr>
+                
                 <Filmvideo items={items} />
-                <hr></hr>
+                
                 
                 
             </div>
@@ -39,6 +49,7 @@ const PlayVideo = () => {
                 {/*nhap comment */}
                 <hr></hr>
                 <form>
+                    
                     <div class=" row" >
                         <label class=" col-sm-3" >Tên</label>
                     </div>
@@ -51,22 +62,9 @@ const PlayVideo = () => {
                 <hr></hr>
                 {/* coment dã co */}
                 <div>
-                    <div class="row" >
-                        <label class=" col-sm-3" >Duc nguyen duy duc :</label>
-                        <label class=" col-sm-9" >The interactive example below demonstrates some of the values for align-items using grid layouthay ay hay</label>
-                    </div>
-                    <div class="row" >
-                        <label class=" col-sm-3" >Duc :</label>
-                        <label class=" col-sm-9" >The interactive example below demonstrates some of the values for align-items using grid layouthay ay hay</label>
-                    </div>
-                    <div class="row" >
-                        <label class=" col-sm-3" >Duc :</label>
-                        <label class=" col-sm-9" >The interactive example below demonstrates some of the values for align-items using grid layouthay ay hay</label>
-                    </div>
-                    <div class="row" >
-                        <label class=" col-sm-3" >Duc :</label>
-                        <label class=" col-sm-9" >The interactive example below demonstrates some of the values for align-items using grid layouthay ay hay</label>
-                    </div>
+                  <Coment items={coment} />   
+                
+                    
                 </div>
             </div>
 </div>
