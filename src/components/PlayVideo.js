@@ -14,14 +14,10 @@ const PlayVideo = () => {
      
     const  idFF  = useParams();
     const [items, setItems] = useState([]);
-    const [coment, setcomentComent] = useState([]);
-    
-    const body = {
-        
-            idF:idFF.id
-           
-    };
-    
+    const [coment, setcomentComent] = useState([]);    
+    const body = {       
+            idF:idFF.id          
+    };  
     console.log(idFF.id)
     useEffect(() => {
         const fetchItems = async () => {
