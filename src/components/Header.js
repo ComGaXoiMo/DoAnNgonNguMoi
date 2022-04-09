@@ -19,7 +19,7 @@ export default class Header extends Component {
 
                             <li>
                                 <Link to="/" >
-                                    <a class="btn btn-hover">
+                                    <a class="btn ">
                                         <span class="white">Home</span>
                                     </a>
                                 </Link>

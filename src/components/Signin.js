@@ -6,37 +6,59 @@ import '../assets/app.css'
 import axios from 'axios';
 import Login from './Login';
 const Signin = () => {
-    const [user, setUser] = useState([]);
+    // const [user, setUser] = useState([]);
+    const [user, setUser] = useState({
+        email: "", namee: "", password: "", imgUser: "", age: ""
+    }
+    );
+    const onChangeInput = e => {
+        const { name, value } = e.target;
+        setUser({...user,[name]: value })
+    };
     const body = {
-        email:"123@gmail.com",
-        name:"1",
-        password: "123"
-};
-    useEffect(() => {
-        const fetchItem = async () => {
-            const result = await axios.post(`http://localhost:5000/api/user/userSignUp`, body);
-            setUser(result)
-            alert(result.body)
+        email: user.email,
+        name: user.namee,
+        password: user.password,
+        imgUser: user.imgUser,
+        age: user.age
+    };   
+    console.log(user)
+    const fetchItem = async () => {
+        try{
+            const a = await axios.post('http://localhost:5000/api/user/userSignUp', body);    
+            if(a.err==0)  {
+                alert(a.data);
+                window.location.href="/";
+            }
+
+        }catch(e)
+        {
+            alert(e);
         }
-        //fetchItem();
-    }, [])
+      
+    }
+    // useEffect(() => {
+
+
+    // }, [])
+
     return (
         <><Header />
 
             <div class="wrapperlg" >
                 <h2>Đăng Ký</h2>
-                <form>
+                <form onSubmit={fetchItem}>
                     <div class="form-group">
                         <label>Họ và tên</label>
-                        <input type="text" name="username" class="form-control " placeholder="Nhập tên người dùng" />
+                        <input type="text"  onChange={onChangeInput} value={setUser.namee} name="namee" class="form-control "   placeholder="Nhập tên người dùng" />
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="text" name="email" class="form-control " placeholder="Nhập email của bạn" />
+                        <input type="text"  value={user.email} name="email" class="form-control " onChange={onChangeInput} placeholder="Nhập email của bạn" />
                     </div>
                     <div class="form-group">
                         <label>Mật Khẩu</label>
-                        <input type="password" name="password" class="form-control " placeholder="Nhập mật khẩu" />
+                        <input type="password" value={user.password} name="password" class="form-control " onChange={onChangeInput} placeholder="Nhập mật khẩu" />
 
                     </div>
                     {/* <div class="form-group">
@@ -44,9 +66,10 @@ const Signin = () => {
                         <input type="password" name="confirm_password" class="form-control" placeholder="Nhập mật khẩu vừa nhập" />
 
                     </div> */}
-                    <div class="">
+                    <div class="form-group">
                         {/* <input type="submit" class="btndk" value="Đăng Ký" /> */}
-                        <button onClick={useEffect.fetchItem} type="button" name="button" >Đăng ký</button>
+                        <button type="submit">Đăng ký</button>
+                        
                     </div>
                     <p>Bạn đã có tài khoản ? <Link to="/Login" class="link">Đăng nhập </Link></p>
                 </form>
