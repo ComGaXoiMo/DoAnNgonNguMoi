@@ -23,12 +23,16 @@ const Signin = () => {
         age: user.age
     };   
     console.log(user)
-    const fetchItem = async () => {
+    const fetchItem = async e => {
+        e.preventDefault();
         try{
-            const a = await axios.post('http://localhost:5000/api/user/userSignUp', body);    
-            if(a.err==0)  {
-                alert(a.data);
-                window.location.href="/";
+            const a = await axios.post('http://localhost:5000/api/user/userSignUp', body);   
+            console.log(a); 
+            if(a.data.err==0)  {
+                alert(a.data.data);
+                window.location.href="/login";
+            }else{
+                alert("loi")
             }
 
         }catch(e)
@@ -61,11 +65,7 @@ const Signin = () => {
                         <input type="password" value={user.password} name="password" class="form-control " onChange={onChangeInput} placeholder="Nhập mật khẩu" />
 
                     </div>
-                    {/* <div class="form-group">
-                        <label>Nhập Lại Mật Khẩu</label>
-                        <input type="password" name="confirm_password" class="form-control" placeholder="Nhập mật khẩu vừa nhập" />
-
-                    </div> */}
+                    
                     <div class="form-group">
                         {/* <input type="submit" class="btndk" value="Đăng Ký" /> */}
                         <button type="submit">Đăng ký</button>

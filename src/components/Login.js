@@ -8,7 +8,11 @@ const Login = () => {
     const [user, setUser] = useState({
         email: "", password: "",
     }
+    );
     
+    const [userID, setuserID] = useState({
+        
+    }
     );
     const onChangeInput = e => {
         const { name, value } = e.target;
@@ -19,18 +23,28 @@ const Login = () => {
         password: user.password,
     };  
     console.log(body)
-    const fetchItem = async () => {
+    const fetchItem = async e => {
+        e.preventDefault();
         const a = await axios.post(`http://localhost:5000/api/user/userSignIn`, body);      
-        if(a.err==0){
-            alert()
+        if(a.data.err==0){
+            alert("Đăng nhập thành công")
+            
+            setuserID(a.data.data._id)
+           
+           window.location.href="/";
+        }
+        else{
+            alert("Đăng nhập thất bại")
+            console.log(user.email)
         }
     }
+    console.log(userID)
     return (
 
         <><Header />
             <div class="wrapperlg">
                 <h2>Đăng Nhập</h2>
-                <form>
+                <form onSubmit={fetchItem} >
                     <div class="form-group">
                         <label>Tài Khoản</label>
                         <input type="text" onChange={onChangeInput} value={setUser.email} name="email" class="form-control " placeholder="Nhập email bạn đã đăng ký" />
