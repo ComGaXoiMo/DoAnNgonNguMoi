@@ -1,11 +1,30 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect  } from 'react';
 import Header from './Header';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
+import axios from 'axios';
 import '../assets/app.css'
-
-function Login() {
-
+const Login = () => {
+    const [user, setUser] = useState({
+        email: "", password: "",
+    }
+    
+    );
+    const onChangeInput = e => {
+        const { name, value } = e.target;
+        setUser({...user,[name]: value })
+    };
+    const body = {
+        email: user.email,
+        password: user.password,
+    };  
+    console.log(body)
+    const fetchItem = async () => {
+        const a = await axios.post(`http://localhost:5000/api/user/userSignIn`, body);      
+        if(a.err==0){
+            alert()
+        }
+    }
     return (
 
         <><Header />
@@ -14,11 +33,11 @@ function Login() {
                 <form>
                     <div class="form-group">
                         <label>Tài Khoản</label>
-                        <input type="text" name="username" class="form-control " placeholder="Nhập email bạn đã đăng ký" />
+                        <input type="text" onChange={onChangeInput} value={setUser.email} name="email" class="form-control " placeholder="Nhập email bạn đã đăng ký" />
                     </div>
                     <div class="form-group">
                         <label>Mật Khẩu</label>
-                        <input type="password" name="password" class="form-control " placeholder="Nhập mật khẩu" />
+                        <input type="password" onChange={onChangeInput} value={setUser.password} name="password" class="form-control " placeholder="Nhập mật khẩu" />
                     </div>
                     <Link to="/ResetPW" class="link">Quên Mật Khẩu </Link>
                     <div class="form-group">
