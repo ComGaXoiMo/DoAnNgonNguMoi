@@ -22,12 +22,13 @@ const Filmvideo = ({ items }) => {
           if (item._id == id) {
             return (
               <>
+                <h2 class="TenPhim">{item.nameMovie} </h2>
                 <video id="videoPlayer" width="650" height="450" controls muted="muted" autoplay>
 
                   <source src={"http://localhost:5001/video1?v=" + item.videoLink} type="video/mp4" />
                 </video>
-                <label class="tieude">{item.nameMovie} </label>
-
+                
+                <h4 class="motaphim">{item.Discription}</h4>
               </>
 
             )

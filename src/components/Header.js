@@ -31,7 +31,7 @@ export default function Header ({userID, isLogin}) {
                             <li>
                                 
                                     <a  class="btn ">
-                                        <span class="white">chào {userID}</span>
+                                        <span class="white">chào {localStorage.getItem('nameLg')}</span>
                                     </a>
                                 
                             </li>

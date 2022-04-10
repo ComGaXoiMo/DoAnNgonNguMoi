@@ -25,6 +25,7 @@ const Login = () => {
             alert("Đăng nhập thành công")
            window.location.href="/";
           localStorage.setItem("idLg", a.data.data._id);
+          localStorage.setItem("nameLg", a.data.data.name);
           localStorage.setItem("isLg",true)
         }
         else{

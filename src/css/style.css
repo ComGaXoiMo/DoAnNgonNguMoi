@@ -51,6 +51,34 @@ body{
     font-size: 2rem;
     font-weight: 900;
 }
+.TenPhim{
+    margin-left: 5%;
+    font-size: 2rem;
+    color: #ff00aa;
+    font-weight: 900;
+}
+.TenPhim{
+    margin-left: 7%;
+    margin-top: 10px;
+    font-size: 2rem;
+    color: #eb5252;
+    font-weight: 900;
+}
+.motaphim{
+    margin-left: 5%;
+    margin-top: 20px;
+    font-size: 2rem;
+    color: #b685a9;
+    font-weight: 300;
+}
+#formcmt{
+    margin-top: 50px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+
 .list-catagorys {
     list-style-type: none;
     display: flex;
@@ -102,6 +130,25 @@ video{
 }
 .row {
     display: flex;
+}
+.row1 {
+    margin: auto;
+    
+    font-size: large;
+    color: #f96565;
+}
+.row2 {
+    margin: auto;
+    border: 2px solid rgb(0, 0, 0);
+    font-size: large;
+    color: #000000;
+    border-radius: 20%;
+}
+.KhungBinhLuan {
+    background: #faf9f9;
+    padding: 20px;
+    border: 2px solid rgb(254, 1, 1);
+    
 }
 .left{
     flex: 3;
