@@ -3,17 +3,17 @@ import Header from './Header';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import axios from 'axios';
+import AccountLogin from '../AccountLogin';
 import '../assets/app.css'
-const Login = () => {
+const Login = (props) => {
     const [user, setUser] = useState({
         email: "", password: "",
     }
     );
-    
-    const [userID, setuserID] = useState({
-        
-    }
-    );
+    const sendData = () => {
+        props.parentCallback("123");
+      }
+    const [userID, setuserID] = useState("");
     const onChangeInput = e => {
         const { name, value } = e.target;
         setUser({...user,[name]: value })
@@ -30,12 +30,13 @@ const Login = () => {
             alert("Đăng nhập thành công")
             
             setuserID(a.data.data._id)
-           
+            sendData()
            window.location.href="/";
         }
         else{
             alert("Đăng nhập thất bại")
             console.log(user.email)
+            
         }
     }
     console.log(userID)
@@ -45,6 +46,7 @@ const Login = () => {
             <div class="wrapperlg">
                 <h2>Đăng Nhập</h2>
                 <form onSubmit={fetchItem} >
+                
                     <div class="form-group">
                         <label>Tài Khoản</label>
                         <input type="text" onChange={onChangeInput} value={setUser.email} name="email" class="form-control " placeholder="Nhập email bạn đã đăng ký" />

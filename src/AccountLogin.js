@@ -3,8 +3,12 @@ import Login from './components/Login'
 
 export default function AccountLogin() {
 
-    
-    console.log(Login.userID)
+    const [message, setMessage] = useState('')
+    const callbackFunction = (childData) => {
+        setMessage(childData)
+      }
+      console.log(message)
+   // console.log(Login.userID)
   const {account, setAccount} = useState({
     _id: "",
     email: "",
@@ -13,4 +17,10 @@ export default function AccountLogin() {
     imgUser: "",
     age: "",
   })
+  return (
+    <div>
+      <Login parentCallback={callbackFunction}/>
+      
+    </div>
+  );
 }
