@@ -24,10 +24,10 @@ const Filmvideo = ({ items }) => {
               <>
                 <h2 class="TenPhim">{item.nameMovie} </h2>
                 <video id="videoPlayer" width="650" height="450" controls muted="muted" autoplay>
-
+                {/* <source src={"http://localhost:5001/video"} type="video/mp4" /> */}
                   <source src={"http://localhost:5001/video1?v=" + item.videoLink} type="video/mp4" />
                 </video>
-                
+                <h3 class="motaphim1">  Mô tả:</h3>
                 <h4 class="motaphim">{item.Discription}</h4>
               </>
 

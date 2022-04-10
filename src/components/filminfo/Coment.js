@@ -17,8 +17,8 @@ const Coment = ({ items }) => {
       {items.map((item) => (     
               <>
               <div class="row2" >
-                        <label class=" col-sm-3 " >{item.userName}:</label>
-                        <label class=" col-sm-9" >{item.content}</label>
+                        <label class="row3" >{item.userName}:</label>
+                        <label class="row4 " >{item.content}</label>
                     </div>            
               </>           
             

@@ -51,28 +51,62 @@ body{
     font-size: 2rem;
     font-weight: 900;
 }
-.TenPhim{
-    margin-left: 5%;
-    font-size: 2rem;
-    color: #ff00aa;
-    font-weight: 900;
-}
+
 .TenPhim{
     margin-left: 7%;
     margin-top: 10px;
     font-size: 2rem;
-    color: #eb5252;
+    color: #f14646;
     font-weight: 900;
 }
 .motaphim{
     margin-left: 5%;
     margin-top: 20px;
-    font-size: 2rem;
-    color: #b685a9;
-    font-weight: 300;
+    font-size: 1rem;
+    color: #eee2eb;
+    font-weight: 30;
+    font-family:sans-serif;
+}
+.motaphim1{
+    margin-left: 5%;
+    margin-top: 20px;
+    font-size: 1,5rem;
+    color: #07c1b7;
+    font-weight: 30;
+    font-family:sans-serif;
+}
+.binhluan{
+    margin-right: 20px;
+    margin-left: 13px;
+    margin-top: 1px;
+    font-size: 1.5rem;
+    color: #07c1b7;
+    
+    font-family:sans-serif;
+}
+.khungbinhluan{
+    margin-right: 10px;
+    padding: 10px;
+    padding-left: 20px;
+    width: 50%;
+    
+    font-size: 1rem;
+    color: #dc1818;
+    border-radius: 15px;
+    font-family:sans-serif;
+}
+.btnDN{
+    margin-right: 10px;
+    
+    width: 50%;
+    background-color: #c80404;
+    font-size: 1rem;
+    color: #d7d7d7;
+    border-radius: 15px;
+    font-family:sans-serif;
 }
 #formcmt{
-    margin-top: 50px;
+    margin-top: 10px;
 }
 form{
     display: flex;
@@ -138,17 +172,55 @@ video{
     color: #f96565;
 }
 .row2 {
-    margin: auto;
-    border: 2px solid rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
     font-size: large;
-    color: #000000;
-    border-radius: 20%;
+    color: #b7b7b7;
+    
+}
+.row3 {
+
+    margin-left: 10px;
+    
+    font-size: large;
+    color: #fbf9f9;
+    font-family:sans-serif;
+    
+}
+.row4 {
+
+    padding: 5px;
+    border: 1px solid #353535;
+    background-color: #797979;
+    font-size: large;
+    color: #fbf9f9;
+    font-family:sans-serif;
+    border-top-left-radius: 15px  ;
+    border-top-right-radius:15px  ;
+    border-bottom-left-radius: 15px ;
+    border-bottom-right-radius:15px ;
+    margin-left: 10px;
+    padding-left: 10px;
+    
 }
 .KhungBinhLuan {
-    background: #faf9f9;
-    padding: 20px;
-    border: 2px solid rgb(254, 1, 1);
+    width: 94%;
+    height: 320px;
+    background: #181616;
+    padding: 10px;
+    border: 2px solid rgb(47, 41, 41);
+    overflow-y: scroll;
+    border-radius: 15px;
     
+    
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #a30606;
+    border-radius: 50%;
 }
 .left{
     flex: 3;

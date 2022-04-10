@@ -61,10 +61,10 @@ const PlayVideo = () => {
                         <p class="" >{localStorage.getItem('nameLg')}</p>
                     </div>
                     <div class=" row" >
-                        <label class=" col-sm-3" >Bình luận:</label>
-                        <input class=" col-sm-6" onChange={(e)=>setUpcomentComent(e.target.value)} 
+                        <h4 class=" binhluan" >Bình luận:</h4>
+                        <input class=" khungbinhluan" onChange={(e)=>setUpcomentComent(e.target.value)} 
                         type="text" name="commnent" placeholder="Nhập bình luận " />
-                        <input type="submit" class="btngbl col-sm-2 " value="Gửi" />
+                        <input type="submit" class="btnDN col-sm-2 " value="Gửi" />
                     </div>
                 </form>
                 <hr></hr>
