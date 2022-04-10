@@ -46,7 +46,7 @@ const Login = () => {
                         <label>Mật Khẩu</label>
                         <input type="password" onChange={onChangeInput} value={setUser.password} name="password" class="form-control " placeholder="Nhập mật khẩu" />
                     </div>
-                    <Link to="/ResetPW" class="link">Quên Mật Khẩu </Link>
+                   
                     <div class="form-group">
                         <input type="submit" class="btndn" value="Đăng nhập" />
                     </div>
