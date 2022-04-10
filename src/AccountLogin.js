@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 import Login from './components/Login'
 
 export default function AccountLogin() {
-
-    const [message, setMessage] = useState('')
-    const callbackFunction = (childData) => {
-        setMessage(childData)
-      }
-      console.log(message)
+    const firstLogin = localStorage.getItem('firstLogin')
+    if(firstLogin){
+      console.log(firstLogin)
+  
+      };
+  
    // console.log(Login.userID)
   const {account, setAccount} = useState({
     _id: "",
@@ -17,10 +17,5 @@ export default function AccountLogin() {
     imgUser: "",
     age: "",
   })
-  return (
-    <div>
-      <Login parentCallback={callbackFunction}/>
-      
-    </div>
-  );
+ 
 }

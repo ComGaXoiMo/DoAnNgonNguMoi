@@ -32,7 +32,7 @@ const PlayVideo = () => {
         console.log(coment)
     }, [])
     return (
-        <><Header />
+        <><Header  userID={localStorage.getItem('idLg')} isLogin={localStorage.getItem("isLg")}/>
         <div class="row">
             <div class="col ">
                 

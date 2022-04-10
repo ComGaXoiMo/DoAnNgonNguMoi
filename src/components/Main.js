@@ -7,6 +7,7 @@ import Signin from './Signin';
 import ResetPW from './ResetPW';
 import PlayVideo from './PlayVideo';
 export default function Main() {
+    
     return (
         <div>
 

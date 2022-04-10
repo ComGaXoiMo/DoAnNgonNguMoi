@@ -47,7 +47,7 @@ const Signin = () => {
     // }, [])
 
     return (
-        <><Header />
+        <><Header userID={localStorage.getItem('idLg')} isLogin={localStorage.getItem("isLg")}/>
 
             <div class="wrapperlg" >
                 <h2>Đăng Ký</h2>

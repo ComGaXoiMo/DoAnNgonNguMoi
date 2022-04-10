@@ -3,17 +3,12 @@ import Header from './Header';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import axios from 'axios';
-import AccountLogin from '../AccountLogin';
 import '../assets/app.css'
-const Login = (props) => {
+const Login = () => {
     const [user, setUser] = useState({
         email: "", password: "",
     }
     );
-    const sendData = () => {
-        props.parentCallback("123");
-      }
-    const [userID, setuserID] = useState("");
     const onChangeInput = e => {
         const { name, value } = e.target;
         setUser({...user,[name]: value })
@@ -28,25 +23,20 @@ const Login = (props) => {
         const a = await axios.post(`http://localhost:5000/api/user/userSignIn`, body);      
         if(a.data.err==0){
             alert("Đăng nhập thành công")
-            
-            setuserID(a.data.data._id)
-            sendData()
            window.location.href="/";
+          localStorage.setItem("idLg", a.data.data._id);
+          localStorage.setItem("isLg",true)
         }
         else{
             alert("Đăng nhập thất bại")
             console.log(user.email)
-            
         }
     }
-    console.log(userID)
     return (
-
-        <><Header />
+        <><Header  userID={localStorage.getItem('idLg')} isLogin={localStorage.getItem("isLg")} />
             <div class="wrapperlg">
                 <h2>Đăng Nhập</h2>
                 <form onSubmit={fetchItem} >
-                
                     <div class="form-group">
                         <label>Tài Khoản</label>
                         <input type="text" onChange={onChangeInput} value={setUser.email} name="email" class="form-control " placeholder="Nhập email bạn đã đăng ký" />
